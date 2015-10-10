@@ -1,4 +1,5 @@
 blueprint xor;
+
 	input a;
 	input b;
 	
@@ -7,26 +8,14 @@ blueprint xor;
 	
 	and aTrue a notB;
 	and bTrue b notA;
-	or onlyOneTrue aTrue bTrue;
 	
-	output result onlyOneTrue;
+	output result aTrue bTrue;
 end_blueprint;
 
-blueprint halfAdder;
-	input a;
-	input b;
-	output sum;
-	output carry;
-	
-	build xor xorGate;
-	link xorGate.a a;
-	link xorGate.b b;
-	link sum xorGate.result;
-	
-	and carryCalc a b;
-	link carry carryCalc;	
-	
-end_blueprint;
+build xor xor_instance;
 
-inputButton a;
-inputButton b;
+input_button a;
+input_button b;
+
+link xor_instance.a a;
+link xor_instance.b b;

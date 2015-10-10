@@ -31,7 +31,8 @@ namespace WindowsFormsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
             //Test IC parcing
-            LogicCircuitParser parser = new LogicCircuitParser(File.ReadAllText("testFile.ls"));
+            fileBrowser.ShowDialog();
+            LogicCircuitParser parser = new LogicCircuitParser(File.ReadAllText(fileBrowser.FileName));
 
             masterCircuit = parser.Parse();
 

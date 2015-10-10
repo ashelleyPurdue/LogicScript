@@ -148,7 +148,7 @@ namespace LogicCircuits
             }
 
             //Move to the next non-whitespace character.
-            while (Char.IsWhiteSpace(text[textPos]) && textPos < text.Length)
+            while (textPos < text.Length && Char.IsWhiteSpace(text[textPos]))
             {
                 textPos++;
             }

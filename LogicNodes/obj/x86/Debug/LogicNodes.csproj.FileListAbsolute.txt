@@ -6,3 +6,11 @@ C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x8
 C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Debug\LogicNodes.pdb
 C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Debug\LogicNodes.Properties.Resources.resources
 C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Debug\LogicNodes.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\LogicScript\LogicNodes\obj\x86\Debug\LogicNodes.exe
+C:\Users\Alex\Documents\LogicScript\LogicNodes\obj\x86\Debug\LogicNodes.pdb
+C:\Users\Alex\Documents\LogicScript\LogicNodes\bin\Debug\LogicNodes.exe
+C:\Users\Alex\Documents\LogicScript\LogicNodes\bin\Debug\LogicNodes.pdb
+C:\Users\Alex\Documents\LogicScript\LogicNodes\obj\x86\Debug\LogicNodes.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\LogicScript\LogicNodes\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Alex\Documents\LogicScript\LogicNodes\obj\x86\Debug\LogicNodes.Properties.Resources.resources
+C:\Users\Alex\Documents\LogicScript\LogicNodes\obj\x86\Debug\LogicNodes.csproj.GenerateResource.Cache

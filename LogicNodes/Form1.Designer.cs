@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.fileBrowser = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // timer1
@@ -51,6 +52,10 @@
             this.flowPanel.Size = new System.Drawing.Size(259, 237);
             this.flowPanel.TabIndex = 0;
             // 
+            // fileBrowser
+            // 
+            this.fileBrowser.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -69,6 +74,7 @@
 
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.FlowLayoutPanel flowPanel;
+        private System.Windows.Forms.OpenFileDialog fileBrowser;
     }
 }
 
