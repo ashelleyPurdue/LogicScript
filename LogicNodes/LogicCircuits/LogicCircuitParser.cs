@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 using System.Diagnostics;
 
@@ -17,10 +18,12 @@ namespace LogicCircuits
         public const string BEGIN_BLUEPRINT_TOKEN = "blueprint";
         public const string END_BLUEPRINT_TOKEN = "end_blueprint";
 
-        public const string LINK_TOKEN = "link";
-        public const string TO_TOKEN = "to";
+        public const string INCLUDE_BLUEPRINTS_TOKEN = "include_blueprints";
 
         public const string BUILD_TOKEN = "build";
+
+        public const string LINK_TOKEN = "link";
+        public const string TO_TOKEN = "to";
 
         public const string DECLARE_INPUT_TOKEN = "input";
         public const string DECLARE_OUTPUT_TOKEN = "output";
@@ -156,6 +159,10 @@ namespace LogicCircuits
             {
                 ProcessBlueprint(parameters);
             }
+            else if (opCode.Equals(INCLUDE_BLUEPRINTS_TOKEN))
+            {
+                IncludeBlueprints(parameters);
+            }
             else if (opCode.Equals(BUILD_TOKEN))
             {
                 BuildBlueprint(parameters);
@@ -225,23 +232,44 @@ namespace LogicCircuits
             }
         }
 
+        private void AddBlueprintData(string blueprintName, BlueprintParseData blueprint)
+        {
+            //Adds a blueprint to the dictionary
+
+            //Throw an error if the blueprint name is already in use
+            if (blueprints.ContainsKey(blueprintName))
+            {
+                throw new DuplicateBlueprintNameException();
+            }
+
+            //Add the blueprint
+            blueprints.Add(blueprintName, blueprint);
+        }
+
 
         //Commands
+
+        private void IncludeBlueprints(string[] parameters)
+        {
+            //Parses the given file and merges the blueprint data.
+
+            LogicCircuitParser blueprintParser = new LogicCircuitParser("nameless", File.ReadAllText(parameters[0]));
+
+            Dictionary<string, BlueprintParseData> otherBlueprints = blueprintParser.GetBlueprintData();
+            foreach (KeyValuePair<string, BlueprintParseData> bp in otherBlueprints)
+            {
+                AddBlueprintData(bp.Key, bp.Value);
+            }
+        }
 
         private void ProcessBlueprint(string[] parameters)
         {
             //parameters[0] = name of blueprint.
             //Creates BlueprintParseData
 
-            //Throw an error if the name already exists.
-            if (blueprints.ContainsKey(parameters[0]))
-            {
-                throw new DuplicateBlueprintNameException();
-            }
-
             //Put the blueprint data in the dictionary
             BlueprintParseData bp = new BlueprintParseData();
-            blueprints.Add(parameters[0], bp);
+            AddBlueprintData(parameters[0], bp);
 
             //Add every following command
             string command = NextCommand();

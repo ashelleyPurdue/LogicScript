@@ -1,11 +1,9 @@
-blueprint clock;
+include_blueprints exampleBlueprints.ls;
 
-	or a;
-	nor b a;
-	link a b;
-	
-	output result a;
+input_button a;
+input_button b;
 
-end_blueprint;
+build xor xorGate;
 
-build clock tickTock;
+link xorGate.a a;
+link xorGate.b b;
