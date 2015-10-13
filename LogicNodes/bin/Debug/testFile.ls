@@ -1,21 +1,11 @@
-blueprint xor;
+blueprint clock;
 
-	input a;
-	input b;
+	or a;
+	nor b a;
+	link a b;
 	
-	nor notA a;
-	nor notB b;
-	
-	and aTrue a notB;
-	and bTrue b notA;
-	
-	output result aTrue bTrue;
+	output result a;
+
 end_blueprint;
 
-build xor xor_instance;
-
-input_button a;
-input_button b;
-
-link xor_instance.a a;
-link xor_instance.b b;
+build clock tickTock;
