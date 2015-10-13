@@ -27,6 +27,7 @@ namespace LogicCircuits
 
         public const string DECLARE_INPUT_TOKEN = "input";
         public const string DECLARE_OUTPUT_TOKEN = "output";
+        public const string DECLARE_INSTANT_NODE_TOKEN = "instant";
         public const string DECLARE_OR_TOKEN = "or";
         public const string DECLARE_NOR_TOKEN = "nor";
         public const string DECLARE_AND_TOKEN = "and";
@@ -94,7 +95,18 @@ namespace LogicCircuits
             string command = NextCommand();
             while (command != null)
             {
-                ExecuteCommand(command);
+                try
+                {
+                    ExecuteCommand(command);
+                }
+                catch (Exception e)
+                {
+                    //Print the textPos.
+                    Debug.WriteLine("Error at textPos: " + textPos);
+
+                    //Re-throw the error
+                    throw;
+                }
                 command = NextCommand();
             }
         }
@@ -327,6 +339,18 @@ namespace LogicCircuits
 
             OrGate gate = new OrGate(parameters[0], circuitStack.Peek().integratedCircuit, false, NodeType.inputNode);
             ProcessNodeParams(gate, parameters);
+        }
+
+        private void CreateInstant(string[] parameters)
+        {
+            //Creates an instant node
+            //parameters[0] = name of the created instant-node
+            //parameters[1] = name of the input to connect(optional)
+
+            //Create the node
+            InstantNode node = new InstantNode(parameters[0], circuitStack.Peek().integratedCircuit);
+
+            ProcessNodeParams(node, parameters);
         }
 
         private void CreateOr(bool inverted, string[] parameters)

@@ -12,3 +12,19 @@ blueprint xor;
 	output result aTrue bTrue;
 	
 end_blueprint;
+
+blueprint xnor;
+
+	input a;
+	input b;
+	
+	build xor xorGate;
+	
+	link xorGate.a a;
+	link xorGate.b b;
+	
+	nor xorOutput xorGate.result;
+	
+	output result xorOutput;
+	
+end_blueprint;

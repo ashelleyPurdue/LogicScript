@@ -42,10 +42,18 @@ namespace LogicCircuits
             {
                 this.inputs.Add(node);
             }
+
+            //Call the intialize method
+            Initialize();
         }
 
 
         //Methods
+
+        protected virtual void Initialize()
+        {
+            //Do any initialization here.
+        }
 
         public void ConnectInput(LogicNode input)
         {
@@ -77,7 +85,7 @@ namespace LogicCircuits
             currentOutput = computedOutput;
         }
 
-        public bool GetCurrentOutput()
+        public virtual bool GetCurrentOutput()
         {
             //Returns the current output.
 

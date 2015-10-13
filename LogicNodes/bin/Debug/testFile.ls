@@ -1,9 +1,11 @@
-include_blueprints exampleBlueprints.ls;
+input_button i;
 
-input_button a;
-input_button b;
+instant a0 i;
+instant a1 a0;
+instant a2 a1;
+instant a3 a2;
 
-build xor xorGate;
-
-link xorGate.a a;
-link xorGate.b b;
+or b0 i;
+or b1 b0;
+or b2 b1;
+or b3 b2;

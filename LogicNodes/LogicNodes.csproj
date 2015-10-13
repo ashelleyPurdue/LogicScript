@@ -71,6 +71,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicCircuits\AndGate.cs" />
+    <Compile Include="LogicCircuits\InstantNode.cs" />
     <Compile Include="LogicCircuits\IntegratedCircuit.cs" />
     <Compile Include="LogicCircuits\InputButton.cs" />
     <Compile Include="LogicCircuits\IntegratedCircuitParseData.cs" />
