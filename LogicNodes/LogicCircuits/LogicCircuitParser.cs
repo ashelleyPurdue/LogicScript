@@ -159,6 +159,10 @@ namespace LogicCircuits
             {
                 CreateOutput(parameters);
             }
+            else if (opCode.Equals(DECLARE_INSTANT_NODE_TOKEN))
+            {
+                CreateInstant(parameters);
+            }
             else if (opCode.Equals(BEGIN_IC_TOKEN))
             {
                 BeginIC(parameters);
