@@ -1,1 +1,4 @@
 *.exe
+*.suo
+/LogicNodes/obj/x86/Debug
+/LogicNodes/obj/x86/Release
