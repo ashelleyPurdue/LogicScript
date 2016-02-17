@@ -5,8 +5,9 @@ using System.Text;
 
 using System.IO;
 using LogicCircuits;
+using System.Diagnostics;
 
-namespace LogicNodes.LogicCircuits
+namespace LogicCircuits
 {
     public class FancyParser
     {
@@ -48,6 +49,7 @@ namespace LogicNodes.LogicCircuits
         private void ExecuteCommand(string command)
         {
             //TODO: Execute the command
+            Console.WriteLine(command);
         }
 
         private string NextCommand()

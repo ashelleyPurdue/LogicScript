@@ -30,9 +30,9 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Test IC parcing
+            //Parse the file
             fileBrowser.ShowDialog();
-            LogicCircuitParser parser = new LogicCircuitParser("master", File.ReadAllText(fileBrowser.FileName));
+            FancyParser parser = new FancyParser(fileBrowser.FileName, "master");
             masterCircuit = parser.GetMasterCircuit();
 
             //Build the controls
