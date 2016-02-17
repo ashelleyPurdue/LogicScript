@@ -1,7 +1,0 @@
-C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\bin\Release\LogicNodes.exe
-C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\bin\Release\LogicNodes.pdb
-C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Release\WindowsFormsApplication1.Form1.resources
-C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Release\LogicNodes.Properties.Resources.resources
-C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Release\LogicNodes.csproj.GenerateResource.Cache
-C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Release\LogicNodes.exe
-C:\Users\Alex\documents\visual studio 2010\Projects\LogicNodes\LogicNodes\obj\x86\Release\LogicNodes.pdb
