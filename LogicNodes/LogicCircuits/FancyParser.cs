@@ -6,6 +6,7 @@ using System.Text;
 using System.IO;
 using LogicCircuits;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace LogicCircuits
 {
@@ -13,6 +14,13 @@ namespace LogicCircuits
     {
         private StreamReader fileReader;
         private MasterCircuit masterCircuit;
+
+        //RegExes
+
+        private static Regex buttonCreationPattern = new Regex("inputButton\\s+\\w+");
+        private static Regex nodeCreationPattern = new Regex(".+=.+");
+
+        //Constructors
 
         public FancyParser(string fileName, string masterCircuitName)
         {
@@ -29,10 +37,16 @@ namespace LogicCircuits
             fileReader.Close();
         }
 
+
+        //Interface
+
         public MasterCircuit GetMasterCircuit()
         {
             return masterCircuit;
         }
+
+
+        //Misc methods
 
         private void Parse()
         {
@@ -50,6 +64,12 @@ namespace LogicCircuits
         {
             //TODO: Execute the command
             Console.WriteLine(command);
+
+            //If it's a button command...
+            if (buttonCreationPattern.IsMatch(command))
+            {
+                CreateButton(command);
+            }
         }
 
         private string NextCommand()
@@ -85,7 +105,19 @@ namespace LogicCircuits
                 //Append c to the builder
                 builder.Append(c);
             }
+        }
 
+        //Command methods
+
+        private void CreateButton(string command)
+        {
+            //Creates a button
+            string[] words = command.Split(' ');
+            string name = words[1];
+
+            masterCircuit.AddNode(new InputButton(name, masterCircuit));
+
+            //TODO: Add to the name list.
         }
     }
 }
