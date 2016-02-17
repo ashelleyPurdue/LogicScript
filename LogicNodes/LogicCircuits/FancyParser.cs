@@ -76,6 +76,12 @@ namespace LogicCircuits
                     return builder.ToString();
                 }
 
+                //Skip newlines
+                if (c == '\r' || c == '\n')
+                {
+                    continue;
+                }
+
                 //Append c to the builder
                 builder.Append(c);
             }
